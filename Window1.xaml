@@ -1,0 +1,35 @@
+﻿<Window 
+    x:Class="Assignment6.Window1" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="350" Width="300" Background="Black">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="214*" />
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="48*" />
+        </Grid.RowDefinitions>
+       
+        <Label Grid.Row="0"  Content="{Binding ElementName=MediaElement1, Path=Source, Mode=OneWay}"/>
+        
+        <MediaElement 
+            Grid.Row="1"
+            LoadedBehavior="Manual" 
+            Margin="0" 
+            x:Name="MediaElement1" 
+            
+        />
+        <ProgressBar 
+            x:Name="ProgressBar1"
+            Grid.Row="2" 
+            Minimum="0" 
+        />
+        <ToolBar Grid.Row="3"  x:Name="toolBar1" HorizontalAlignment="Stretch">
+            <Button x:Name="ButtonOpen"  Content="Open" Style="{StaticResource FlattenButton}"/>
+            <Button x:Name="ButtonPlay"  Content="Play" Style="{StaticResource StretchButton}"/>
+            <Button x:Name="ButtonPause" Content="Pause" Style="{StaticResource ButtonBase}"/>
+            <Button x:Name="ButtonStop"  Content="Stop" Style="{StaticResource ButtonBase}"/>
+        </ToolBar>
+    </Grid>
+</Window>
